@@ -23,7 +23,12 @@ public class Principal {
                     "\n7) Salir");
             System.out.println("Ingrese una ocpion valida: ");
             System.out.println("*****************************************");
-            opc = input.nextInt();
+            if(input.hasNextInt()){
+                opc = input.nextInt();
+            }else{
+                System.out.println("Porfavor ingrese una opcion valida.");
+                input.next();
+            }
             switch (opc){
                 case 1 -> {
                     Divisa divisa = consulta.consultaDivisas("USD", "ARS");
